@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'mini_magick'
+#gem 'mini_magick'
 gem 'rmagick'
 
 # Bundle edge Rails instead:
