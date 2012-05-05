@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    corgis = ["corgi1.jpg", "corgi2.jpg", "corgi3.jpeg"]
+    corgis = ["corgi1.jpg", "corgi2.jpg", "corgi3.jpeg", "corgi4.jpg"]
     
     height = params[:height].to_i
     width  = params[:width].to_i
