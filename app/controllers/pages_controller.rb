@@ -19,4 +19,12 @@ class PagesController < ApplicationController
       end
     end
   end
+  
+  def video
+    @height = params[:height].to_i
+    @width  = params[:width].to_i
+    
+    
+  end
+  
 end
