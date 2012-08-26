@@ -1,5 +1,5 @@
 jQuery.fn.placecorgi = function() {
-  $(this).find('.corgi').each(function(){
+  $(this).find('.corgi').each(function() {
     $(this).attr("src", getCorgi($(this)));
   });
 };
@@ -14,6 +14,6 @@ function getCorgi(element){
   if(width == 0 || isNaN(width)){
     width = 300;
   }
-  placeCorgiURL = placeCorgiURL + width + "/" + height
-  return placeCorgiURL
+  placeCorgiURL = placeCorgiURL + width + "/" + height;
+  return placeCorgiURL;
 }

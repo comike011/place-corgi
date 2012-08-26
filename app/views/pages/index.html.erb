@@ -7,34 +7,54 @@
   <div class="span12">
     <h1>Usage</h1>
 
-    <h2>Images</h2>
+    <section>
+      <h2>Images</h2>
 
-    <p>Just link to this site with a width and height specified after the url. <code>http://placecorgi.com/width/height</code></p>
+      <p>Just link to this site with a width and height specified after the url. <code>http://placecorgi.com/width/height</code></p>
 
-    <pre>&lt;img src="http://placecorgi.com/260/180" /&gt;</pre>
+      <pre>&lt;img src="http://placecorgi.com/260/180" /&gt;</pre>
 
-    <ul class="thumbnails">
-      <li class="span3">
-        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 1), :class => 'thumbnail' %>
-      </li>
-      <li class="span3">
-        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 2), :class => 'thumbnail' %>
-      </li>
-      <li class="span3">
-        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 3), :class => 'thumbnail' %>
-      </li>
-      <li class="span3">
-        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 4), :class => 'thumbnail' %>
-      </li>
-    </ul>
+      <ul class="thumbnails">
+        <li class="span3">
+          <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 1), :class => 'thumbnail' %>
+        </li>
+        <li class="span3">
+          <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 2), :class => 'thumbnail' %>
+        </li>
+        <li class="span3">
+          <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 3), :class => 'thumbnail' %>
+        </li>
+        <li class="span3">
+          <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 4), :class => 'thumbnail' %>
+        </li>
+      </ul>
+    </section>
 
-    <h2>Video</h2>
+    <section>
+      <h2>JavaScript File (requires jQuery)</h2>
 
-    <p>You can get an embed code for a corgi-themed video by adding <code>/v</code> to the url along with width and height. <code>http://placecorgi.com/v/width/height</code></p>
+      <p>You can add the Place Corgi js file to your application, which will automatically replace any img tags that have the class <code>corgi</code> with images from Place Corgi.</p>
 
-    <pre>http://placecorgi.com/v/480/340</pre>
+      <p>In your page head, add the js file.</p>
 
-    <iframe width='480' height='340' src='http://www.youtube.com/embed/S-zeCXlFPjk' frameborder='0' allowfullscreen></iframe>
+      <pre>&lt;script type="text/javascript" src="http://placecorgi.com/assets/jquery.placecorgi.js"&gt;&lt;/script&gt;</pre>
+
+      <p>Or, <a href="/assets/jquery.placecorgi.js">download the file</a> and include it in your project.</p>
+
+      <p>Add a <code>corgi</code> class to any img tag in your site. Make sure you have the width and height attributes set.</p>
+
+      <pre>&lt;img src="/images/my_boring_image.jpg" class="corgi" width="320" height="240" /&gt;</pre>
+    </section>
+
+    <section>
+      <h2>Video</h2>
+
+      <p>You can get an embed code for a corgi-themed video by adding <code>/v</code> to the url along with width and height. <code>http://placecorgi.com/v/width/height</code></p>
+
+      <pre>http://placecorgi.com/v/480/340</pre>
+
+      <iframe width='480' height='340' src='http://www.youtube.com/embed/S-zeCXlFPjk' frameborder='0' allowfullscreen></iframe>
+    </section>
 
   </div>
 </div>
