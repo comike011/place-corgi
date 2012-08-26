@@ -44,6 +44,12 @@
       <p>Add a <code>corgi</code> class to any img tag in your site. Make sure you have the width and height attributes set.</p>
 
       <pre>&lt;img src="/images/my_boring_image.jpg" class="corgi" width="320" height="240" /&gt;</pre>
+
+      <p>Call the function on DOM load.</p>
+
+      <pre>$(document).ready(function() {
+  $('body').placecorgi();
+});</pre>
     </section>
 
     <section>
