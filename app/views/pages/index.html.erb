@@ -1,4 +1,40 @@
-<h1>Place Corgi</h1>
-<p>
-  go to www.placecorgi.com/[width]/[height] to get your place corgi then embed in your website with img tag src="www.placecorgi.com/[width]/[hieght]"
-</p>
+<div class="hero-unit">
+  <h1>Place Corgi</h1>
+  <p>Need placeholder images for your design or website? Use the most awesome subject possible, corgis!</p>
+</div>
+
+<div class="row main">
+  <div class="span12">
+    <h1>Usage</h1>
+
+    <h2>Images</h2>
+
+    <p>Just link to this site with a width and height specified after the url. <code>http://placecorgi.com/width/height</code></p>
+
+    <pre>&lt;img src="http://placecorgi.com/260/180" /&gt;</pre>
+
+    <ul class="thumbnails">
+      <li class="span3">
+        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 1), :class => 'thumbnail' %>
+      </li>
+      <li class="span3">
+        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 2), :class => 'thumbnail' %>
+      </li>
+      <li class="span3">
+        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 3), :class => 'thumbnail' %>
+      </li>
+      <li class="span3">
+        <%= image_tag corgi_path(:width => 260, :height => 180, :no_cache => 4), :class => 'thumbnail' %>
+      </li>
+    </ul>
+
+    <h2>Video</h2>
+
+    <p>You can get an embed code for a corgi-themed video by adding <code>/v</code> to the url along with width and height. <code>http://placecorgi.com/v/width/height</code></p>
+
+    <pre>http://placecorgi.com/v/480/340</pre>
+
+    <iframe width='480' height='340' src='http://www.youtube.com/embed/S-zeCXlFPjk' frameborder='0' allowfullscreen></iframe>
+
+  </div>
+</div>

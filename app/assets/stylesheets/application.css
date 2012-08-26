@@ -8,15 +8,20 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap_custom
+ *= require pages
  *= require_self
- *= require_tree .
 */
 
 body {
   font-family: helvetica;
 }
 
-h1{
-  font-family:georgia;
+.hero-unit {
+  background: url('/assets/cartoon-corgi.png') no-repeat 100% 50%;
+  padding-right: 250px;
 }
 
+.main h1 {
+  margin-bottom: 10px;
+}
