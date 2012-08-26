@@ -1,1 +1,5 @@
-<iframe width="<%=@width %>" height="<%= @height %>" src="http://www.youtube.com/embed/S-zeCXlFPjk" frameborder="0" allowfullscreen></iframe>
+<iframe width="<%=@video_width %>" height="<%= @video_height %>" src="http://www.youtube.com/embed/S-zeCXlFPjk" frameborder="0" allowfullscreen></iframe>
+<br />
+<textarea class="video-code" readonly="true">
+  <iframe width='<%= @video_width %>' height='<%= @video_height %>' src='http://www.youtube.com/embed/S-zeCXlFPjk' frameborder='0' allowfullscreen></iframe>
+</textarea>
