@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
   def index
-
   end
 
+  def incorgnito
+  end
+  
   def show
     # heroku varnish caching
     response.headers['Cache-Control'] = 'public, max-age=28800' # 8 hours
