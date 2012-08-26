@@ -1,2 +1,1 @@
-place-corgi
-===========
+Improve your demo sites with the power of corgis!
