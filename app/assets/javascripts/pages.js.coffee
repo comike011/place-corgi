@@ -3,6 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('.video-code').focus ->
-    $(this).select()
-    return false;
+  if $('.video-code').length
+    $('.video-code').select()
