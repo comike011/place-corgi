@@ -5,7 +5,6 @@ class PagesController < ApplicationController
 
   def show
     corgis = ["corgi1.jpg", "corgi2.jpg", "corgi3.jpeg", "corgi4.jpg"]
-    
     height = params[:height].to_i
     width  = params[:width].to_i
     if (width > 0) && (height > 0)
@@ -21,10 +20,7 @@ class PagesController < ApplicationController
   end
   
   def video
-    @height = params[:height].to_i
-    @width  = params[:width].to_i
-    
-    
+    @video_height = params[:height].to_i
+    @video_width  = params[:width].to_i
   end
-  
 end
