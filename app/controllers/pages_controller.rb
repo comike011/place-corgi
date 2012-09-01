@@ -21,14 +21,14 @@ class PagesController < ApplicationController
   end
 
   private
-  def image_folder_router(height, width)
-    file_path = Rails.root.join('public', 'corgis')
-    if (height > width)
-      return Dir.glob("#{file_path}/tall/corgi*").sample
-    elsif (width > height)
-      return Dir.glob("#{file_path}/wide/corgi*").sample
-    else
-      return Dir.glob("#{file_path}/square/corgi*").sample
+    def image_folder_router(height, width)
+      file_path = Rails.root.join('public', 'corgis')
+      if (height > width)
+        return Dir.glob("#{file_path}/tall/corgi*").sample
+      elsif (width > height)
+        return Dir.glob("#{file_path}/wide/corgi*").sample
+      else
+        return Dir.glob("#{file_path}/square/corgi*").sample
+      end
     end
-  end
 end
