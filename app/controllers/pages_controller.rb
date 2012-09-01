@@ -1,33 +1,25 @@
 class PagesController < ApplicationController
-  def index
-  end
-
-  def incorgnito
-  end
-  
   def show
-    # heroku varnish caching
-    response.headers['Cache-Control'] = 'public, max-age=28800' # 8 hours
     width  = params[:width].to_i
     height = params[:height].to_i
-    
+
     if(width > 0 && height == 0)
       height = width
     end
-    
+
     if (width > 0) && (height > 0)
       corgi_file = image_folder_router(height, width)
       img = Magick::Image::read(corgi_file).first
-      final_image = img.resize_to_fill(width, height)      
+      final_image = img.resize_to_fill(width, height)
       send_data final_image.to_blob, :type => 'image/jpg',:disposition => 'inline'
     end
   end
-  
+
   def video
     @video_height = params[:height].to_i
     @video_width  = params[:width].to_i
   end
-  
+
   private
   def image_folder_router(height, width)
     file_path = Rails.root.join('public', 'corgis')
