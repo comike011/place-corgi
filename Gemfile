@@ -13,6 +13,11 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'turbo-sprockets-rails3'
+end
+
+group :production do
+  gem 'heroku_rails_deflate'
 end
 
 group :development do
