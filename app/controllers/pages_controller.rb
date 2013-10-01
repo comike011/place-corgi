@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :initialize_analytics_tracker
+
   def show
     width  = params[:width].to_i
     height = params[:height].to_i
@@ -7,28 +9,38 @@ class PagesController < ApplicationController
       height = width
     end
 
+    @gabba.page_view('Image', "/#{width}/#{height}") unless params[:no_track].present?
+
     if (width > 0) && (height > 0)
       corgi_file = image_folder_router(height, width)
       img = Magick::Image::read(corgi_file).first
       final_image = img.resize_to_fill(width, height)
-      send_data final_image.to_blob, :type => 'image/jpg',:disposition => 'inline'
+      send_data final_image.to_blob, type: 'image/jpg', disposition: 'inline'
     end
   end
 
   def video
-    @video_height = params[:height].to_i
     @video_width  = params[:width].to_i
+    @video_height = params[:height].to_i
+
+    @gabba.page_view('Video', "/#{@video_width}/#{@video_height}")
   end
 
   private
-    def image_folder_router(height, width)
-      file_path = Rails.root.join('public', 'corgis')
-      if (height > width)
-        return Dir.glob("#{file_path}/tall/corgi*").sample
-      elsif (width > height)
-        return Dir.glob("#{file_path}/wide/corgi*").sample
-      else
-        return Dir.glob("#{file_path}/square/corgi*").sample
-      end
+
+  def initialize_analytics_tracker
+    @gabba = Gabba::Gabba.new('UA-31451209-1', 'placecorgi.com')
+  end
+
+  def image_folder_router(height, width)
+    file_path = Rails.root.join('public', 'corgis')
+    if (height > width)
+      return Dir.glob("#{file_path}/tall/corgi*").sample
+    elsif (width > height)
+      return Dir.glob("#{file_path}/wide/corgi*").sample
+    else
+      return Dir.glob("#{file_path}/square/corgi*").sample
     end
+  end
+
 end

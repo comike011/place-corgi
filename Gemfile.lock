@@ -41,6 +41,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    gabba (1.0.1)
     heroku_rails_deflate (1.0.0)
       actionpack (~> 3.2.13)
       activesupport (~> 3.2.13)
@@ -125,6 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  gabba
   heroku_rails_deflate
   jquery-rails
   newrelic_rpm
