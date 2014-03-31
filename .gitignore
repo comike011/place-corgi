@@ -3,6 +3,7 @@
 *.rbc
 *.sassc
 .bundle
+.env
 .powrc
 .rspec
 .rvmrc
